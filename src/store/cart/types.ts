@@ -15,11 +15,14 @@ interface RemoveProductAction {
 
 export type CartActionTypes = AddProductAction | RemoveProductAction
 
+export interface CartStateItem {
+  quantity: number
+  lineTotal: number
+  product: Product
+}
+
 export interface CartState {
   error: boolean
   loading: boolean
-  items: Array<{
-    quantity: number
-    product: Product
-  }>
+  items: CartStateItem[]
 }

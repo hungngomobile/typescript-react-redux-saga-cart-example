@@ -1,8 +1,14 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
+import { RootState } from '~/store/rootReducer'
+
+import CartItem from './CartItem'
 import { Table } from './styles'
 
 const Cart: React.FC = () => {
+  const cart = useSelector((state: RootState) => state.cart)
+
   return (
     <Table>
       <thead>
@@ -14,12 +20,9 @@ const Cart: React.FC = () => {
         </tr>
       </thead>
       <tbody>
-        <tr className="line-item">
-          <th scope="row">Product example</th>
-          <td className="price">R$ 2,50</td>
-          <td>x4</td>
-          <td className="price">R$ 10,00</td>
-        </tr>
+        {cart.items.map((item) => (
+          <CartItem key={item.product.id} item={item} />
+        ))}
       </tbody>
       <tfoot>
         <tr>
