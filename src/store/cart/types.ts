@@ -18,7 +18,7 @@ export type CartActionTypes = AddProductAction | RemoveProductAction
 export interface CartState {
   error: boolean
   loading: boolean
-  products: ArrayLike<{
+  items: Array<{
     quantity: number
     product: Product
   }>

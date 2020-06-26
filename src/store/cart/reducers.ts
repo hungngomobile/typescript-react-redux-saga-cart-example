@@ -1,3 +1,5 @@
+import produce from 'immer'
+
 import {
   ADD_PRODUCT,
   CartActionTypes,
@@ -8,7 +10,7 @@ import {
 const initialState: CartState = {
   error: false,
   loading: false,
-  products: [],
+  items: [],
 }
 
 export function cartReducer(
@@ -17,6 +19,19 @@ export function cartReducer(
 ): CartState {
   switch (action.type) {
     case ADD_PRODUCT:
+      return produce(state, (draftState) => {
+        const foundProduct = draftState.items.find(
+          (item) => item.product.id === action.product.id,
+        )
+        if (foundProduct) {
+          foundProduct.quantity += 1
+        } else {
+          draftState.items.push({
+            quantity: 1,
+            product: action.product,
+          })
+        }
+      })
     case REMOVE_PRODUCT:
     default:
       return state
