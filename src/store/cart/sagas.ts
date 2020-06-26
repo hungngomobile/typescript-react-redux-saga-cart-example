@@ -4,9 +4,10 @@ import { all, call, put, select, takeLatest } from 'redux-saga/effects'
 
 import { RootState } from '../rootReducer'
 import { calculateCartFailure, calculateCartSuccess } from './actions'
-import { CALCULATE_CART } from './types'
+import { CALCULATE_CART, CalculateCartAction } from './types'
 
-function* calculateCartAction(): any {
+function* calculateCartAction(action: CalculateCartAction): any {
+  console.log('calculateCartAction', action)
   try {
     const state: RootState = yield select((state) => state)
 

@@ -23,6 +23,7 @@ export function cartReducer(
   state = initialState,
   action: CartActionTypes,
 ): CartState {
+  console.log('cartReducer', state, action)
   switch (action.type) {
     case ADD_PRODUCT:
       return produce(state, (draftState) => {
