@@ -34,3 +34,21 @@ export const Table = styled.table`
     }
   }
 `
+
+export const Updating = styled.span`
+  margin-left: 5px;
+  font-weight: 300;
+  font-size: 0.9rem;
+`
+
+export const Button = styled.button`
+  padding: 5px 15px;
+`
+
+export const Loading = styled.span`
+  font-size: 0.9rem;
+  font-weight: 300;
+  &:before {
+    content: 'Loading...';
+  }
+`

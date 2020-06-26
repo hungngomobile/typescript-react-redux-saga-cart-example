@@ -42,6 +42,7 @@
     "comma-dangle": ["error", "always-multiline"],
     "newline-before-return": "error",
     "react/prop-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
     "react/self-closing-comp": [
       "error",
       {

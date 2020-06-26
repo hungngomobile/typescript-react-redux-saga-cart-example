@@ -3,22 +3,25 @@ import { Product } from '~/entities/Product'
 
 import { Promise } from 'bluebird'
 
-interface CalculateCartDto {
-  products: Product[]
+export interface CalculateCartDto {
+  items: {
+    quantity: number
+    product: Product
+  }[]
 }
 
 export default async function calculateCart({
-  products,
+  items,
 }: CalculateCartDto): Promise<Cart> {
   const shipping = 5
-  const subtotal = products.reduce(
-    (accumulator, product) => accumulator + product.price,
+  const subtotal = items.reduce(
+    (accumulator, item) => accumulator + item.quantity * item.product.price,
     0,
   )
   const total = shipping + subtotal
 
   return Promise.delay(1000, {
-    products,
+    items,
     shipping,
     subtotal,
     total,

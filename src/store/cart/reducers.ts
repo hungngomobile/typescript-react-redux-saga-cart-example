@@ -2,6 +2,9 @@ import produce from 'immer'
 
 import {
   ADD_PRODUCT,
+  CALCULATE_CART,
+  CALCULATE_CART_FAILURE,
+  CALCULATE_CART_SUCCESS,
   CartActionTypes,
   CartState,
   REMOVE_PRODUCT,
@@ -11,6 +14,9 @@ const initialState: CartState = {
   error: false,
   loading: false,
   items: [],
+  subtotal: 0,
+  shipping: 0,
+  total: 0,
 }
 
 export function cartReducer(
@@ -50,6 +56,19 @@ export function cartReducer(
 
         return draftState
       })
+    case CALCULATE_CART:
+      return { ...state, loading: true }
+    case CALCULATE_CART_FAILURE:
+      return { ...state, loading: false, error: true }
+    case CALCULATE_CART_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        error: false,
+        shipping: action.cart.shipping,
+        subtotal: action.cart.subtotal,
+        total: action.cart.total,
+      }
     default:
       return state
   }
