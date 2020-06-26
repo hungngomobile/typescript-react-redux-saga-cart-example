@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     --webkit-font-smoothing: antialised;
+    font-family: 'Open Sans', sans-serif;
   }
 
   a {
