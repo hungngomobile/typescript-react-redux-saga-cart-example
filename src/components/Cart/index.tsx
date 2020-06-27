@@ -2,6 +2,7 @@ import React, { useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import formatCurrency from '~/helpers/formatCurrency'
+import { calculateCart } from '~/store/cart/actions'
 import { RootState } from '~/store/rootReducer'
 
 import CartItem from './CartItem'
@@ -70,7 +71,7 @@ const Cart: React.FC = () => {
         </tr>
         <tr>
           <th colSpan={4} scope="row">
-            <Button onClick={() => dispatch({ type: 'CALCULATE_CART' })}>
+            <Button onClick={() => dispatch(calculateCart())}>
               Calculate totals
             </Button>
 

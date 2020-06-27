@@ -2,7 +2,7 @@ import React, { useCallback, useMemo } from 'react'
 import { useDispatch } from 'react-redux'
 
 import formatCurrency from '~/helpers/formatCurrency'
-import { addProduct, calculateCart, removeProduct } from '~/store/cart/actions'
+import { addProduct, removeProduct } from '~/store/cart/actions'
 import { CartStateItem } from '~/store/cart/types'
 
 import { ActionButton, Quantity } from './styles'
@@ -23,12 +23,10 @@ const CartItem: React.FC<CartItem> = ({ item }) => {
 
   const handleIncrease = useCallback(() => {
     dispatch(addProduct(item.product))
-    dispatch(calculateCart())
   }, [dispatch, item.product])
 
   const handleDecrease = useCallback(() => {
     dispatch(removeProduct(item.product))
-    dispatch(calculateCart())
   }, [dispatch, item.product])
 
   return (

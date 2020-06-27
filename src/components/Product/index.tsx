@@ -2,7 +2,7 @@ import React, { useCallback, useMemo } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { Product as ProductModel } from '~/entities/Product'
-import { addProduct, calculateCart } from '~/store/cart/actions'
+import { addProduct } from '~/store/cart/actions'
 
 import { Button, Container, Image, Name, Price } from './styles'
 
@@ -16,7 +16,6 @@ const Product: React.FC<ProductProps> = ({ product }) => {
 
   const handleAddToCart = useCallback(() => {
     dispatch(addProduct(product))
-    dispatch(calculateCart())
   }, [dispatch, product])
 
   return (

@@ -3,11 +3,20 @@ import calculateCart from '~/services/calculateCart'
 import { all, call, put, select, takeLatest } from 'redux-saga/effects'
 
 import { RootState } from '../rootReducer'
-import { calculateCartFailure, calculateCartSuccess } from './actions'
-import { CALCULATE_CART, CalculateCartAction } from './types'
+import {
+  calculateCart as actionCalculateCart,
+  calculateCartFailure,
+  calculateCartSuccess,
+} from './actions'
+import {
+  ADD_PRODUCT,
+  AddProductAction,
+  CALCULATE_CART,
+  CalculateCartAction,
+} from './types'
 
 function* calculateCartAction(action: CalculateCartAction): any {
-  console.log('calculateCartAction', action)
+  console.log('saga:calculateCartAction', action)
   try {
     const state: RootState = yield select((state) => state)
 
@@ -26,4 +35,12 @@ function* calculateCartAction(action: CalculateCartAction): any {
   }
 }
 
-export default all([takeLatest(CALCULATE_CART, calculateCartAction)])
+function* addProduct(action: AddProductAction): any {
+  console.log('saga:addProduct', action)
+  yield put(actionCalculateCart())
+}
+
+export default all([
+  takeLatest(CALCULATE_CART, calculateCartAction),
+  takeLatest(ADD_PRODUCT, addProduct),
+])
