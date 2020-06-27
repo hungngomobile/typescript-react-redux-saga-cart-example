@@ -18,6 +18,7 @@ import {
 function* calculateCartAction(action: CalculateCartAction): any {
   console.log('saga:calculateCartAction', action)
   try {
+    // Get the current cart state.
     const state: RootState = yield select((state) => state)
 
     // Calculate the cart totals.
