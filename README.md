@@ -2,6 +2,8 @@
 
 This project simulates an asynchronous API to calculate cart totals. An usual application that needs to send cart details to calculate the totals (like shipping or apply coupon) can be built with Redux + Redux Saga, like this example.
 
+Also there's some settings with Husky, lint-staged and ESLint; state mutation with Immer; styles with Styled Components; Bluebird to add some functionalities to Promises; custom aliases with React App Rewired; and maybe later I'll add automated tests with Jest and Cypress.
+
 You can find the demo link in project details or just [click here](https://eliasjnior.github.io/typescript-react-redux-saga-cart-example/).
 
 It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
