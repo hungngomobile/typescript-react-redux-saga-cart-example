@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/typescript-react-redux-saga-cart-example/static/js/main.69a49110.chunk.js",
-    "main.js.map": "/typescript-react-redux-saga-cart-example/static/js/main.69a49110.chunk.js.map",
+    "main.js": "/typescript-react-redux-saga-cart-example/static/js/main.00f76606.chunk.js",
+    "main.js.map": "/typescript-react-redux-saga-cart-example/static/js/main.00f76606.chunk.js.map",
     "runtime-main.js": "/typescript-react-redux-saga-cart-example/static/js/runtime-main.457fa70f.js",
     "runtime-main.js.map": "/typescript-react-redux-saga-cart-example/static/js/runtime-main.457fa70f.js.map",
-    "static/js/2.c72c343e.chunk.js": "/typescript-react-redux-saga-cart-example/static/js/2.c72c343e.chunk.js",
-    "static/js/2.c72c343e.chunk.js.map": "/typescript-react-redux-saga-cart-example/static/js/2.c72c343e.chunk.js.map",
+    "static/js/2.1c585801.chunk.js": "/typescript-react-redux-saga-cart-example/static/js/2.1c585801.chunk.js",
+    "static/js/2.1c585801.chunk.js.map": "/typescript-react-redux-saga-cart-example/static/js/2.1c585801.chunk.js.map",
     "index.html": "/typescript-react-redux-saga-cart-example/index.html",
-    "precache-manifest.1e6d5604b28c74eebd6e265fab367589.js": "/typescript-react-redux-saga-cart-example/precache-manifest.1e6d5604b28c74eebd6e265fab367589.js",
+    "precache-manifest.e13abb415cb8797b1825ae03f3b207ef.js": "/typescript-react-redux-saga-cart-example/precache-manifest.e13abb415cb8797b1825ae03f3b207ef.js",
     "service-worker.js": "/typescript-react-redux-saga-cart-example/service-worker.js",
-    "static/js/2.c72c343e.chunk.js.LICENSE.txt": "/typescript-react-redux-saga-cart-example/static/js/2.c72c343e.chunk.js.LICENSE.txt"
+    "static/js/2.1c585801.chunk.js.LICENSE.txt": "/typescript-react-redux-saga-cart-example/static/js/2.1c585801.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.457fa70f.js",
-    "static/js/2.c72c343e.chunk.js",
-    "static/js/main.69a49110.chunk.js"
+    "static/js/2.1c585801.chunk.js",
+    "static/js/main.00f76606.chunk.js"
   ]
 }
