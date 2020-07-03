@@ -13,6 +13,8 @@ import {
   AddProductAction,
   CALCULATE_CART,
   CalculateCartAction,
+  REMOVE_PRODUCT,
+  RemoveProductAction,
 } from './types'
 
 function* calculateCartAction(action: CalculateCartAction): any {
@@ -41,7 +43,13 @@ function* addProduct(action: AddProductAction): any {
   yield put(actionCalculateCart())
 }
 
+function* removeProduct(action: RemoveProductAction): any {
+  console.log('saga:removeProduct', action)
+  yield put(actionCalculateCart())
+}
+
 export default all([
   takeLatest(CALCULATE_CART, calculateCartAction),
   takeLatest(ADD_PRODUCT, addProduct),
+  takeLatest(REMOVE_PRODUCT, removeProduct),
 ])
